@@ -1,1 +1,14 @@
-This file was created by JetBrains PhpStorm 5.0.2 for binding GitHub repository
+Helpfile
+
+A usable helpfile component with a fresh layout, that should look and feel good, cross-application, keyboard accessible
+
+Pass the version number through the url
+
+Dependencies: jQuery
+
+Dual licensed under the MIT or GPL Version 2 licenses.
+
+Author: dirkjan@degroot.in
+Location: https://github.com/dirkjan111/helpfile
+Version: 0.2
+Date: 03-11-2011
