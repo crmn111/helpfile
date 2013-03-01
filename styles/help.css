@@ -1,0 +1,439 @@
+/*
+ * 
+ * EPO 			
+ * Filename:	Help.css 
+ * Description: A usable helpfile component with a fresh layout, that should look and feel good, cross-application	
+ * Author: 		dirkjan@degroot.in
+ * Date: 		30-11-2011 
+ * 
+ */
+
+body {
+	overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif;
+	color: black;
+    font: 80% sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#fff;
+}
+
+/* -------- headings -------- */
+h1, h2, h3, h4, h5, h6 {
+    background: none repeat scroll 0 0 transparent;
+    border-color: #ccc;
+    font-weight: normal;
+    margin: 0;
+    color:#333;
+}
+
+h1 {
+	display:block;
+	font-weight:bold;
+	line-height:3.7em;
+	padding-left:.5em;
+	font-size:188%;
+	border-bottom: 1px solid #ccc;
+    border-right:20px solid rgba(204, 204, 204, .5);
+	height:3.7em;
+}
+
+body.fresh h1 {
+	background:url('../images/system/stripes.png') repeat;
+	color:#1971B3;
+}
+
+body.basic h1 {
+	background-color:#efefef;
+	background-image:none;
+}
+
+body.formal h1 {
+	background-color:#2C749C;
+	color:#fff;
+}
+
+body.basic .col-1 h1  {
+	background-image:none;
+	background-color:#efefef;
+	padding-left:.5em;
+}
+
+body.formal .col-1 h1 {
+    background-image:none;
+    padding-left:.5em;
+}
+
+h2 {
+	margin-top:.5em;
+	border-bottom: 1px solid #ccc;
+	font-size:155%;
+	padding-bottom:.3em;
+}
+
+body.fresh h2 {
+	color:#E29314
+}
+
+body.formal h2 {
+	color:#BE0F05
+}
+
+h3 {
+	font-size:135%;
+	border-bottom: 1px solid #efefef;
+	padding-bottom:.3em;
+	color:#333;
+}
+
+body.fresh h3 {
+	color:#69BC20;
+}
+
+p, div.col-2 li {
+	line-height:1.8em;
+}
+
+/* font-sizes: */
+
+body.normal > div div.contents {
+    font-size:100%
+}
+
+body.larger > div div.contents {
+    font-size:112%
+}
+
+body.largest > div div.contents {
+    font-size:130%
+}
+
+
+div.style-switcher {
+	position:absolute;
+	top:.1em;
+    right:18em;
+
+}
+
+div.style-switcher label {
+	margin-right:1em;
+	color:#666;
+}
+
+div.style-switcher select {
+	border:1px solid #666;
+}
+
+div.highlight {
+    position:absolute;
+    top:.1em;
+    right:34em;
+    vertical-align: middle;
+}
+
+div.highlight label {
+    color:#666;
+}
+
+div.highlight input {
+    border: 1px solid #666;
+}
+
+span.highlight {
+    display:inline-block;
+    border-radius: 2px;
+    background-color: #EBF70A;
+}
+
+div.highlight button {
+    border:1px solid #333;
+    max-height:20px;
+}
+
+div.highlight button span {
+    display: inline-block;
+    font-size:90%;
+    max-height:20px;
+
+}
+
+div.highlight a.reset {
+    background:url('../images/system/search-reset-icon.png') no-repeat 50% 50%;
+    width:15px;
+    height:15px;
+    display:inline-block;
+    position:absolute;
+    right:6.2em;
+    top:.4em;
+    z-index:-1;
+}
+
+div.resize {
+    display:inline-block;
+    position:absolute;
+    right:5em;
+    height:26px;
+    line-height:28px;
+}
+
+div.resize span{
+    color:#666;
+}
+
+div.resize a {
+    display:inline-block;
+}
+
+div.resize a.normal {
+    font-size:80%;
+}
+
+div.resize a.larger {
+    font-size:90%;
+}
+
+div.toggles {
+    position:absolute;
+    left:0;
+    right:0;
+    top:118px;
+    height:24px;
+    line-height:24px;
+    background-color: #eee;
+    border-top:1px solid #fff;
+    border-bottom:1px solid #bbb;
+    border-right:20px solid #bbb;
+    padding-left:.5em;
+}
+
+div.toggles a {
+    font-size:90%;
+    color:#666;
+    padding-left:1.2em;
+    display:inline-block;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+
+div.toggles a.collapse {
+    background-image:url('../scripts/jquery.treeview/images/minus.gif');
+}
+
+div.toggles a.expand {
+    background-image:url('../scripts/jquery.treeview/images/plus.gif');
+}
+
+a.clear {
+    display:inline-block;
+    margin-left:.25em;
+    text-decoration: underline;
+}
+
+/* -------- anchors -------- */
+a { text-decoration:none }
+a:hover, a:active, a:focus { text-decoration:underline }
+
+/* -------- anchors -------- */
+
+/* -------- table elements -------- */
+th { border:1px solid black; background-color: silver; font-weight:bold; text-align: left; vertical-align: middle; padding:5px;}
+td { border:1px solid black; text-align:left; vertical-align:top; padding:5px;}
+
+
+
+
+/* -------- table elements -------- */
+
+/* sections */
+body > div.section { padding:.5em!important}
+
+div.bar {
+    position:absolute;
+    z-index:999;
+    top:91px;
+    right:0;
+    left:0;
+    height:2em;
+    line-height:2em;
+    vertical-align: middle;
+    padding-left:.5em;
+    background-color:#eee;
+    border-right:20px solid #bbb;
+    border-bottom:1px solid #bbb;
+}
+
+a.print { display:block; position:absolute; top:.2em; right:1em; width:20px; height:20px; background: url('../images/system/print.png') no-repeat 50% 50%; text-indent:-999px; overflow:hidden; }
+
+
+/* -------- submeta -------- */
+dl dt,dl dd{display:inline-block; color:#666;}
+dl dt{margin-right:0;font-weight:700;text-transform:capitalize;}
+dl dd{margin:0 .5em 0 .3em;}
+dl {position:relative; display:inline-block; top:-.9em; padding-left:.3em;}
+a, a:visited { color:#1E66B3 }
+/* -------- submeta -------- */
+
+.top {margin-top:1em;}
+.bottom {margin-bottom:1em;}
+.clear {float:none; clear:both}
+.hide {display:none;}
+
+/* -------- columns -------- */
+
+div.col-1 { position: absolute; top:0; right:80%; bottom:0; left:0;  }
+div.col-2 { position: absolute; top:0; right:0; bottom:0; left:20%; }
+/*
+div.col-1 { width:100%; float:left; }
+div.col-2 { width:100%; float:left; }
+*/
+
+div.col-1, div.col-2 { overflow:hidden;  } /* original height:28em; */
+
+div.col-1 div.contents, div.col-2 div.head {
+    position:absolute;
+    top:118px;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow-x:auto;
+    overflow-y:scroll;
+    padding:.5em
+}
+
+div.col-1 div.contents {
+    top:144px;
+}
+
+div.col-2 div.head {
+    padding-bottom:20em;
+}
+
+div.col-2 > div > div.section {padding:.2em }
+div.col-2 > div > div.section div.section {padding:.2em 0 }
+/* .col-2 > div > div.section:hover {background-color:#fafadc;} may be graphical overkill */
+/* -------- columns -------- */
+
+/* framing of screenshots */
+div.col-2 div.img { padding:1.5 2.5em; text-align:center; border:1px solid #eee; margin-bottom:1em; background-color:#F5F5F5; }
+div.col-2 div.img img { margin:auto; margin:1.5em 2.5em; max-width:95%;}
+
+div.section.first {
+    margin-top:2.5em;
+}
+
+/* ---- overwrite filetree setting ---- */
+.filetree { margin-left:0!important; }
+.filetree, .filetree ul { list-style:none; }
+.filetree span, .filetree a { display:inline-block; padding-left:.8em; }
+.filetree span a { display:inline-block; position:relative; left:-.7em; color:#3E4D6B;}
+.filetree span a:hover {color:#7D1D48; }
+/* ---- overwrite filetree setting ---- */
+
+
+/* legenda */
+p.legenda { line-height:1.6em; }
+p.legenda span { display: inline-block; width: 45px; height: 20px; vertical-align: middle; }
+p.legenda span.european { background-color:#539CE6 }
+p.legenda span.pct { background-color:#FFD700 }
+
+/* arrow up */
+a.up { display:block; border-top:1px solid #ccc; text-align:right; color:#999!important; font-size:90%; margin-top:1.5em; padding-top:.3em; background:url('../images/system/up.gif') no-repeat 100% 55%; padding-right:1.5em; }
+
+/* colored icons */
+span.type { display: inline-block; width: 45px; height: 15px; margin-left:.5em; vertical-align: middle;}
+span.type.european { background-color: #539ce6;}
+span.type.pct { background-color: gold;}
+span.type.national { background-color: #8c8caa;}
+
+code {font-weight:bold; font-size:125%;}
+a#errata {padding-left:1.8em; background: url('../images/system/confluence.png') no-repeat 0 40%;  line-height:2em; display:inline-block;}
+
+
+/* keyboard shortcuts: */
+
+table.keyboard {
+    border:0;
+    background-color:#eee;
+    border-radius:5px;
+    border-collapse: collapse;
+    margin-bottom:1em;
+    min-width: 60%;
+}
+
+table.keyboard td, table.keyboard th {
+    border:0;
+    color:#333;
+}
+
+table.keyboard td:first-child {
+    width:25em;
+}
+
+table.keyboard caption {
+    text-align: left;
+    line-height:2em;
+    border-radius:5px 5px 0 0;
+    background-color: #ccc;
+    padding-left: .5em;
+    color:#666;
+}
+
+div.section:last-child {
+    margin-bottom:50em;
+}
+/**
+* KEYS.css
+*
+* A simple stylesheet for rendering beautiful keyboard-style elements.
+*
+* Author: Michael Hüneburg
+* Website: http://michaelhue.com/keyscss
+* License: MIT License (see LICENSE.txt)
+*/
+
+/* Base style, essential for every key. */
+kbd, .key {
+    display: inline;
+    display: inline-block;
+    min-width: 1em;
+    padding: .2em .3em;
+    font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+    border-radius: .3em;
+    border: none;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+kbd[title], .key[title] {
+    cursor: help;
+}
+
+/* Dark style for display on light background. This is the default style. */
+kbd, kbd.dark, .dark-keys kbd, .key, .key.dark, .dark-keys .key {
+    background: rgb(80, 80, 80);
+    background: -moz-linear-gradient(top, rgb(60, 60, 60), rgb(80, 80, 80));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(60, 60, 60)), to(rgb(80, 80, 80)));
+    color: rgb(250, 250, 250);
+    text-shadow: -1px -1px 0 rgb(70, 70, 70);
+    -moz-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+    -webkit-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+    box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+}
+
+/* Light style for display on dark background. */
+kbd.light, .light-keys kbd, .key.light, .light-keys .key {
+    background: rgb(250, 250, 250);
+    background: -moz-linear-gradient(top, rgb(210, 210, 210), rgb(255, 255, 255));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(210, 210, 210)), to(rgb(255, 255, 255)));
+    color: rgb(50, 50, 50);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    -moz-box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+    -webkit-box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+    box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+}

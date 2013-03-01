@@ -1,0 +1,48 @@
+/*
+ * 
+ * EPO 			
+ * Filename:	print.css
+ * Description: A usable helpfile component with a fresh layout, that should look and feel good, cross-application	
+ * Author: 		dirkjan@degroot.in
+ * Date: 		30-11-2011 
+ * 
+ */
+
+
+* {
+    font-family: verdana, arial;
+    color:#333;
+}
+
+
+div.col-1, div.col-2, h1 {
+    position: relative;
+    overflow: visible;
+    clear:both;
+    margin:0;
+}
+
+.style-switcher, .highlight, a.print, a.up {
+    display: none;
+}
+
+img {
+    max-width:100%;
+    max-height:500px;
+}
+
+table {
+    border-collapse: collapse;
+    border-top:1px solid #666;
+    border-left:1px solid #666;
+}
+
+table tr td {
+    border-bottom:1px solid #666;
+    border-right:1px solid #666;
+    border-collapse: collapse;
+}
+
+ul.filetree a {
+    text-decoration: none;
+}
