@@ -2,6 +2,9 @@
  *
  * Helpfile
  *
+ * https://github.com/dirkjan111/helpfile
+ *
+ *
  * A usable helpfile component with a fresh layout, that should look and feel good, cross-application, keyboard accessible
  *
  * Pass the version number through the url
