@@ -38,6 +38,12 @@ function goToByScroll(id){
     } catch(e) {}
 }
 
+$(window).resize(function() {
+    var windowWidth = $(window).width();
+    var dl = $("div.bar dl");
+    (windowWidth < 1250) ? dl.hide() : dl.show();
+});
+
 $(document).ready(function(){
 	document.title = appTitle;	
 	$("span.appname").each(function(){
