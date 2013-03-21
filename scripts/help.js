@@ -38,13 +38,19 @@ function goToByScroll(id){
     } catch(e) {}
 }
 
-$(window).resize(function() {
+function checkWidth() {
     var windowWidth = $(window).width();
     var dl = $("div.bar dl");
     (windowWidth < 1250) ? dl.hide() : dl.show();
+}
+
+$(window).resize(function () {
+    checkWidth();
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
+    checkWidth();
+
 	document.title = appTitle;	
 	$("span.appname").each(function(){
 		$(this).html(appName);
