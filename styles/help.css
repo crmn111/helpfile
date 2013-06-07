@@ -38,6 +38,12 @@ h1 {
 	height:3.7em;
 }
 
+#splitter div#right-pane {overflow:hidden; }
+#splitter {
+    position: absolute;
+    right:0;
+}
+
 body.fresh h1 {
 	background:url('../images/system/stripes.png') repeat;
 	color:#1971B3;
@@ -64,6 +70,48 @@ body.formal .col-1 h1 {
     padding-left:.5em;
 }
 
+body.noir, body.noir .col-1, body.noir .col-2, body.noir div.contents {
+    background-color: #303030!important;
+    color:#e3deda;
+}
+
+body.noir div.hlight {
+    background-color:#000!important;
+}
+
+body.noir dt, body.noir dd, body.noir label, body.noir .resize span {
+    color:#e3deda!important;
+}
+
+body.noir .treeview ul {
+    background-color: #303030;
+}
+
+body.noir a {
+    color: #ccece6 !important;
+}
+
+body.noir div.bar, body.noir div.bar, body.noir .toggles {
+    background-color: #000!important;
+    color:#e3deda;
+}
+
+a.marker {
+    position: absolute;
+    display:block;
+    width:80%;
+    height:6px;
+    background: rgba(224, 226, 151, 0.47);
+    background: #E0E297\9;
+    border-radius: 5px;
+    left:4px;
+}
+
+a.marker.focus {
+    background: rgba(149, 226, 120, 0.46);
+    background: #95E278\9;
+}
+
 h2 {
 	margin-top:.5em;
 	border-bottom: 1px solid #ccc;
@@ -77,6 +125,25 @@ body.fresh h2 {
 
 body.formal h2 {
 	color:#BE0F05
+}
+
+body.noir h1 {
+    color:#a4bf60;
+}
+
+body.noir h2 {
+    color:#fcb3b3;
+}
+
+body.noir h3 {
+    color: #e6d044;
+}
+
+body.noir .treeview li { background-image: url(../scripts/jquery.treeview/images/treeview-contrast-line.png); }
+body.noir .treeview .hitarea, body.noir .treeview li.lastCollapsable, body.noir .treeview li.lastExpandable { background-image: url(../scripts/jquery.treeview/images/treeview-contrast.png); }
+
+body.noir span.highlight {
+    color:#333;
 }
 
 h3 {
@@ -207,6 +274,10 @@ div.toggles {
     padding-left:.5em;
 }
 
+body.noir div.toggles {
+    border-top:0;
+}
+
 div.toggles a {
     font-size:90%;
     color:#666;
@@ -223,6 +294,15 @@ div.toggles a.collapse {
 div.toggles a.expand {
     background-image:url('../scripts/jquery.treeview/images/plus.gif');
 }
+
+body.noir a.collapse {
+    background-image:url('../scripts/jquery.treeview/images/minus_contrast.png')!important;
+}
+
+body.noir a.expand {
+    background-image:url('../scripts/jquery.treeview/images/plus_contrast.png')!important;
+}
+
 
 a.clear {
     display:inline-block;
@@ -281,8 +361,8 @@ a, a:visited { color:#1E66B3 }
 
 /* -------- columns -------- */
 
-div.col-1 { position: absolute; top:0; right:80%; bottom:0; left:0;  }
-div.col-2 { position: absolute; top:0; right:0; bottom:0; left:20%; }
+div.col-1 { width:100%; height:100%;  }
+div.col-2 { width:100%; height:100%;  }
 /*
 div.col-1 { width:100%; float:left; }
 div.col-2 { width:100%; float:left; }
@@ -298,12 +378,44 @@ div.col-1 div.contents, div.col-2 div.head {
     bottom:0;
     overflow-x:auto;
     overflow-y:scroll;
-    padding:.5em
+    padding:0;
 }
+
+div.col-1 div.contents {
+    padding:.5em;
+}
+
+div.col-2 div.contents > div{
+    padding:0;
+}
+
+div.col-2 div.contents > div div {
+    padding:1em;
+}
+
 
 div.col-1 div.contents {
     top:144px;
 }
+
+div.col-2 div.contents {
+    margin-right:0;
+    background-color:#fff;
+}
+
+div.col-2 {
+   background-color:rgba(204, 204, 204, .5);
+}
+
+div.col-2 div.hlight {
+    position:absolute;
+    right:20px;
+    top:119px;
+    bottom:1px;
+    width:46px;
+    background-color:#303030;
+}
+
 
 div.col-2 div.head {
     padding-bottom:20em;
