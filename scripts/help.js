@@ -16,14 +16,18 @@
  * Date: 03-11-2011
  */
 
-/*jshint camelcase:true, curly:true, eqeqeq:true, forin:true, immed:true, latedef:true, newcap:true, noarg:true, noempty:true, nonew:true, undef:true, unused:true, strict:true, trailing:true, browser:true, jquery:true */
+/* jshint bitwise:true, camelcase:true, curly:true, eqeqeq:true, forin:true, immed:true, latedef:true,
+ newcap:true, noarg:true, noempty:true, nonew:true, plusplus:true, regexp:true, undef:true, unused:true,
+ strict:true, trailing:true, jquery:true, browser:true */
 
 (function($) {
 
     "use strict";
 
     $.fn.setSelection = function(selectionStart, selectionEnd) {
-        if(this.length == 0) return this;
+        if(this.length === 0) {
+            return this;
+        }
         var input = this[0];
 
         if (input.createTextRange) {
@@ -40,23 +44,24 @@
     };
 
     $.fn.setCursorPosition = function(position){
-        if(this.length == 0) return this;
+        if(this.length === 0) {
+            return this;
+        }
         return $(this).setSelection(position, position);
     };
 
-    $.fn.focusEnd = function(e){
+    $.fn.focusEnd = function(){
         this.setCursorPosition(this.val().length);
         return this;
     };
 
     try {
         var version = window.location.search.substring(1);
-        var version = version.split("version=");
+        version = version.split("version=");
 
         var appName = 'Appname';
         var appVersion = version[1] || '2.0';
         var appTitle = appName + ' ' + appVersion;
-        var topPanel = '142';
     } catch(e) {}
 
 
@@ -65,7 +70,7 @@
             return Math.round(tr);
         }
         try {
-            var callback = (callback) ? callback : $.noop;
+            callback = (callback) ? callback : $.noop;
             var header = $('#start').height() + $('div.bar').height();
             var realtop = (id === '#start') ? 0 : $(id).offset().top;
             var scrolltop = (id === '#start') ? 0 : $("div.col-2 div.head").scrollTop();
@@ -84,7 +89,11 @@
     var checkWidth = function() {
         var windowWidth = $(window).width();
         var dl = $("div.bar dl");
-        (windowWidth < 1250) ? dl.hide() : dl.show();
+        if(windowWidth < 1250) {
+            dl.hide();
+        } else {
+            dl.show();
+        }
     };
 
     var resizeSplitter = function() {
@@ -99,7 +108,7 @@
     var toggleHighLightArea = function(type) {
         /* if highlight area is hidden, then ease in */
         var marginRight = (type==='show') ? 67 : 0;
-        var base = $('div.hlight');
+        /*var base = $('div.hlight');*/
 
         $('.col-2 div.contents').animate({
             marginRight : marginRight + 'px'
@@ -115,12 +124,12 @@
         /* remove the highlights */
         $('div.hlight a').remove();
 
-        toggleHighLightArea('show');
+        var showhide = $('span.highlight').length ? 'show' : 'hide';
+
+        toggleHighLightArea(showhide);
 
         var proceed = function() {
             var base = $('.col-2 div.contents > div');
-            var scrolltop =$('.col-2 div.contents');
-
 
             /* see how big are the canvases */
             var heightFixed = $('div.hlight').height();
@@ -129,7 +138,7 @@
             /* fill the array with size objects */
             var arrayOfHighlightsRatios = [];
 
-            $('span.highlight').each(function(k,v){
+            $('span.highlight').each(function(k){
                 var topPos = Math.floor($(this).offset().top) - header;
                 var obj = {
                     flex: topPos,
@@ -155,7 +164,7 @@
                 $('div.col-2 div.head').animate({scrollTop: rel},250);
                 return false;
             });
-        }
+        };
 
         /* scroll to top */
         goToByScroll('#start', proceed);
@@ -168,6 +177,18 @@
         drawMarkers();
     });
 
+    var onResize = function() {
+        drawMarkers();
+    };
+
+    var onExpand = function() {
+        drawMarkers();
+    };
+
+    var onCollapse = function() {
+        drawMarkers();
+    };
+
     $(document).ready(function () {
 
         $("#splitter").kendoSplitter({
@@ -175,7 +196,10 @@
             panes: [
                 { collapsible: true, resizable:true, min:'300px', max:'500px', size:'19%' },
                 { collapsible: false }
-            ]
+            ],
+            expand: onExpand,
+            collapse: onCollapse,
+            resize: onResize
         });
 
         checkWidth();
@@ -189,6 +213,7 @@
         });
 
         document.title = appTitle;
+
         $("span.appname").each(function(){
             $(this).html(appName);
         });
@@ -198,11 +223,11 @@
         $("#name").html(appName);
 
         var d = new Date();
-        var curr_date = d.getDate();
-        var curr_month = d.getMonth() + 1; //months are zero based
-        var curr_year = d.getFullYear();
+        var currDate = d.getDate();
+        var currMonth = d.getMonth() + 1; //months are zero based
+        var currYear = d.getFullYear();
 
-        $("#date").html(curr_date + "-" + curr_month + "-" + curr_year);
+        $("#date").html(currDate + "-" + currMonth + "-" + currYear);
 
         $(".filetree").treeview({
             animated: "fast",
@@ -241,7 +266,7 @@
             $(this).next().effect("highlight", {}, 3000);
         });
 
-        self.target = $('option:selected', 'select#target').val();
+        /*self.target = $('option:selected', 'select#target').val();*/
 
         $(document).on('change','.style-switcher select',function() {
             $("body").removeClass('fresh formal basic noir').addClass($('option:selected', $(this)).val().toLowerCase());
@@ -281,7 +306,7 @@
                     manageZindex();
 
                     var key = (e.keyCode ? e.keyCode : e.which);
-                    if (key == $.ui.keyCode.ENTER) { //Enter keycode
+                    if (key === $.ui.keyCode.ENTER) { //Enter keycode
                        $('div.highlight button').trigger('click');
                     }
                 break;
@@ -334,6 +359,7 @@
         $(document).on('click', 'div.resize a', function() {
             $('body').removeClass('normal larger largest').addClass($(this).attr('class'));
             $.cookie('help_resize', $(this).attr('class'));
+            drawMarkers();
             return false;
         });
 
@@ -371,7 +397,7 @@
         });
 
         $(document).jkey('esc,right,left,end,home',true,function(sKey,oEvent){
-            var et = oEvent.target.nodeName.toLowerCase() || null;
+            /*var et = oEvent.target.nodeName.toLowerCase() || null;*/
             var base = $('ul.filetree a.active');
             var nrInTree = $('ul.filetree a').length;
 
@@ -381,14 +407,15 @@
 
             base.removeClass('active').blur();
 
-            if(sKey == 'escape') {
+            if(sKey === 'escape') {
                 $("div.window_panel", window.parent.document).hide();
                 $("button.help", window.parent.document).removeClass('active');
+                $('div.k-splitbar').removeClass('k-state-focused').trigger('blur');
             }
 
             switch(sKey){
                 case 'right' :
-                    if (oEvent.ctrlKey) {
+                    if (oEvent.ctrlKey && !$('div.k-splitbar').hasClass('k-state-focused')) {
                         if(nrFocus === 0 || hlBase.find('a.focus').index()+1 === nrHighlights) {
                             hlBase.find('a:first').trigger('click');
                         } else {
@@ -409,7 +436,7 @@
                     }
                 break;
                 case 'left' :
-                    if (oEvent.ctrlKey) {
+                    if (oEvent.ctrlKey && !$('div.k-splitbar').hasClass('k-state-focused')) {
                         if(nrFocus === 0 || hlBase.find('a.focus').index() === 0) {
                             hlBase.find('a:last').trigger('click');
                         } else {
@@ -440,6 +467,9 @@
             }
 
 
+            /*setTimeout(function(){
+                $('body').trigger('focus');
+            },2000);*/
         });
 
     });
