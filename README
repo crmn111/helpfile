@@ -14,10 +14,12 @@ Version: 0.3
 Date: 03-11-2011
 
 
-0.3 RELEASE NOTES (07-06-2013):
+V0.3 RELEASE NOTES (07-06-2013):
+
 1) Noir/ high contrast theme for improved accessibility
 2) Animated highlight section that show highlight markers
 3) Keyboard accessibility of highlight markers - (CTRL-left or right arrow) - synchronized with highlights
 4) Improved keyboard accessibility
 5) Implemented Split screen, with possibility to maximize content window
+6) Jshint compliance
 
