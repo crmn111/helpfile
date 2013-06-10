@@ -6,7 +6,7 @@
  *
  * Pass the version number through the url
  *
- * Dependencies: jQuery
+ * Dependencies: jQuery, Treeview Component, Kendo-UI
  *
  * Dual licensed under the MIT or GPL Version 2 licenses.
  *
@@ -383,15 +383,15 @@
         });
 
         /* wire up keyboard shortcuts : */
-
-
-        $(document).jkey('h',false,function(sKey,oEvent){
+        $(document).jkey('h',true,function(sKey,oEvent){
             var et = oEvent.target.nodeName.toLowerCase() || null;
             if (et !== 'input' && et !== 'textarea' && et !== 'select') {
                 switch(sKey){
                     case 'h' :
+                        setTimeout(function() {
                             $('input#highlight').focusEnd();
-                    break;
+                        },50);
+                        break;
                 }
             }
         });

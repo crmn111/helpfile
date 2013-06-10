@@ -4,7 +4,7 @@ A usable helpfile component with a fresh layout, that should look and feel good,
 
 Pass the version number through the url
 
-Dependencies: jQuery
+Dependencies: jQuery, Treeview Component, Kendo-UI
 
 Dual licensed under the MIT or GPL Version 2 licenses.
 
